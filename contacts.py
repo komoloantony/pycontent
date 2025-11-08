@@ -4,12 +4,17 @@ def contact_book():
 
     for i in range(n):
         name = input(f"Enter name {i+1}: ").title().strip()
-        phone = int(input("Enter phone number: "))
-        contacts[name]=phone
+        phone = input("Enter phone number: ")
+        if len(phone) == 10 and phone.isdigit():
+            contacts[name]= phone
+        else:
+            print("\n invalid input! ")
+            phone = input("Enter phone nuber: ")
+            contacts[name]=phone
 
     print("\n -------PHONE NUMBERS------- ")
 
-    for name,phone in contacts.items():
-        print(f"{name}:[{phone}]")
-contact_book()
+    for name in sorted(contacts.keys()) :
+        print(f"{name}:[{contacts[name]}]")
 
+contact_book()
