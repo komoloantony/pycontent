@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 
+
 menu = {
     "chips": 150,
     "burger": 300,
